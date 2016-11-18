@@ -10,7 +10,7 @@ import UIKit
 
 class THQuizController: UIViewController {
 
-    @IBOutlet weak var progressView : RPCircularProgress!
+    @IBOutlet weak var progress: RPCircularProgress!
     
     @IBOutlet weak var pokemonIDLb: UILabel!
     @IBOutlet weak var scoreLb: UILabel!
@@ -25,11 +25,9 @@ class THQuizController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        progressView.updateProgress(1.0, animated: true, initialDelay: 0.0, duration: 10.0, completion: {
-            print("Complete")
-        })
         self.setupUI()
         self.pokemonIDLb.isHidden = true
+        progressTime(btns: [self.btnA, self.btnB, self.btnC, self.btnD])
 
     }
     
@@ -37,6 +35,7 @@ class THQuizController: UIViewController {
     
       func setupUI ()  {
         
+       
         
         self.scoreLb.text = "\(self.score)"
         
@@ -55,6 +54,20 @@ class THQuizController: UIViewController {
         
         self.cardView.layer.cornerRadius = 10
         
+    }
+    
+    func progressTime (btns : [UIButton]) {
+        self.progress.updateProgress(1, animated: true, initialDelay: 0, duration: 10, completion:
+            {
+                for btn in btns {
+                    if btn.title(for: .normal) == "Pikachu" {
+                        btn.backgroundColor = UIColor.green
+                    }
+                    btn.isUserInteractionEnabled = false
+                }
+                self.pokemonIDLb.isHidden = false
+                self.pokemonImage.image = self.pokemonImage.image?.withRenderingMode(.alwaysOriginal)
+        })
     }
     @IBAction func invokeBtnA(_ sender: AnyObject) {
         self.choiceAnswer(answer: self.btnA.title(for: .normal)!, button: self.btnA, anotherButton: [self.btnB, self.btnC, self.btnD])
@@ -88,6 +101,7 @@ class THQuizController: UIViewController {
         }
         self.pokemonIDLb.isHidden = false
         self.pokemonImage.image = self.pokemonImage.image?.withRenderingMode(.alwaysOriginal)
+        self.progress.
     }
     @IBAction func invokeBackBtn(_ sender: AnyObject) {
         self.navigationController?.popViewController(animated: true)

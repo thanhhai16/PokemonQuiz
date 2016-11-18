@@ -202,10 +202,31 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5tF-Hb-Wsw">
-                                        <frame key="frameInset" minX="333" minY="22" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffW-6J-prN" customClass="RPCircularProgress" customModule="THPokemonQuiz" customModuleProvider="target">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="FrI-sy-FrY"/>
+                                            <constraint firstAttribute="width" constant="30" id="LBu-ys-iDh"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="trackTintColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="progressTintColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="innerTintColor">
+                                                <color key="value" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="thicknessRatio">
+                                                <real key="value" value="1.1000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clockwiseProgress" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.85384615379999995" green="0.85384615379999995" blue="0.85384615379999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -215,6 +236,7 @@
                                     <constraint firstItem="V21-7i-83P" firstAttribute="width" secondItem="Ygf-A4-hiw" secondAttribute="width" id="1p3-wy-4zK"/>
                                     <constraint firstItem="2l8-Yv-3K7" firstAttribute="top" secondItem="wEX-bA-F2K" secondAttribute="top" constant="120" id="5xa-zL-wTd"/>
                                     <constraint firstItem="V21-7i-83P" firstAttribute="top" secondItem="RD1-oB-F0v" secondAttribute="bottom" constant="8" id="8km-2O-CbX"/>
+                                    <constraint firstAttribute="trailing" secondItem="ffW-6J-prN" secondAttribute="trailing" constant="8" id="920-r2-b94"/>
                                     <constraint firstAttribute="trailing" secondItem="szG-Tl-Jkp" secondAttribute="trailing" constant="8" id="EJF-a3-vfA"/>
                                     <constraint firstItem="R1k-1t-Jfw" firstAttribute="top" secondItem="wEX-bA-F2K" secondAttribute="top" constant="22" id="Fkh-gW-ZxU"/>
                                     <constraint firstAttribute="trailing" secondItem="2l8-Yv-3K7" secondAttribute="trailing" constant="20" id="Ivt-lI-qlB"/>
@@ -232,6 +254,7 @@
                                     <constraint firstItem="V21-7i-83P" firstAttribute="leading" secondItem="wEX-bA-F2K" secondAttribute="leading" constant="8" id="dda-e8-bEA"/>
                                     <constraint firstItem="R1k-1t-Jfw" firstAttribute="leading" secondItem="wEX-bA-F2K" secondAttribute="leading" constant="8" id="diB-SD-Hjy"/>
                                     <constraint firstItem="RD1-oB-F0v" firstAttribute="top" secondItem="2l8-Yv-3K7" secondAttribute="bottom" constant="40" id="htH-Zt-qPR"/>
+                                    <constraint firstItem="ffW-6J-prN" firstAttribute="top" secondItem="wEX-bA-F2K" secondAttribute="top" constant="22" id="igv-3R-E2d"/>
                                     <constraint firstItem="Ygf-A4-hiw" firstAttribute="height" secondItem="szG-Tl-Jkp" secondAttribute="height" id="kIB-mz-RnB"/>
                                     <constraint firstAttribute="trailing" secondItem="Ygf-A4-hiw" secondAttribute="trailing" constant="8" id="mEe-Gs-WXQ"/>
                                     <constraint firstItem="Ygf-A4-hiw" firstAttribute="top" secondItem="szG-Tl-Jkp" secondAttribute="bottom" constant="8" id="wq8-cB-eTe"/>
@@ -255,13 +278,13 @@
                         <outlet property="cardView" destination="2l8-Yv-3K7" id="9km-l1-tsr"/>
                         <outlet property="pokemonIDLb" destination="k9l-TM-SqB" id="Uh2-WR-1sg"/>
                         <outlet property="pokemonImage" destination="ni9-Fb-smR" id="7Xe-hB-bYH"/>
-                        <outlet property="progressView" destination="5tF-Hb-Wsw" id="ysa-R5-FBy"/>
+                        <outlet property="progress" destination="ffW-6J-prN" id="8qI-x7-6YX"/>
                         <outlet property="scoreLb" destination="se4-Dx-79A" id="jAs-Sx-pKh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWC-Vr-dZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="118"/>
+            <point key="canvasLocation" x="869.60000000000002" y="117.39130434782609"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w1P-jU-bxY">
