@@ -10,6 +10,9 @@ import UIKit
 
 class THQuizController: UIViewController {
 
+    @IBOutlet weak var progressView : RPCircularProgress!
+    
+    @IBOutlet weak var pokemonIDLb: UILabel!
     @IBOutlet weak var scoreLb: UILabel!
     @IBOutlet weak var btnD: UIButton!
     @IBOutlet weak var btnC: UIButton!
@@ -22,12 +25,18 @@ class THQuizController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        progressView.updateProgress(1.0, animated: true, initialDelay: 0.0, duration: 10.0, completion: {
+            print("Complete")
+        })
         self.setupUI()
-       
+        self.pokemonIDLb.isHidden = true
 
     }
-
-    func setupUI ()  {
+    
+    
+    
+      func setupUI ()  {
+        
         
         self.scoreLb.text = "\(self.score)"
         
@@ -77,6 +86,7 @@ class THQuizController: UIViewController {
                 btn.isUserInteractionEnabled = false
             }
         }
+        self.pokemonIDLb.isHidden = false
         self.pokemonImage.image = self.pokemonImage.image?.withRenderingMode(.alwaysOriginal)
     }
     @IBAction func invokeBackBtn(_ sender: AnyObject) {

@@ -35,7 +35,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaZ-TY-RU9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HIGH SCORE " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaZ-TY-RU9">
                                         <fontDescription key="fontDescription" name="PoplarStd" family="Poplar Std" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -129,17 +129,25 @@
                                                     <constraint firstAttribute="width" secondItem="ni9-Fb-smR" secondAttribute="height" multiplier="86:86" id="V4f-Jz-hdS"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#001 Pikachu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9l-TM-SqB">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="k9l-TM-SqB" firstAttribute="top" secondItem="2l8-Yv-3K7" secondAttribute="top" constant="8" id="Bj3-CI-YPZ"/>
                                             <constraint firstItem="ni9-Fb-smR" firstAttribute="centerY" secondItem="2l8-Yv-3K7" secondAttribute="centerY" id="JNE-06-Fyn"/>
                                             <constraint firstAttribute="bottom" secondItem="ni9-Fb-smR" secondAttribute="bottom" id="Re7-5u-LfW"/>
+                                            <constraint firstItem="k9l-TM-SqB" firstAttribute="leading" secondItem="2l8-Yv-3K7" secondAttribute="leading" constant="8" id="U5q-SV-ILF"/>
                                             <constraint firstItem="ni9-Fb-smR" firstAttribute="centerX" secondItem="2l8-Yv-3K7" secondAttribute="centerX" id="iqU-BM-TOo"/>
                                             <constraint firstItem="ni9-Fb-smR" firstAttribute="top" secondItem="2l8-Yv-3K7" secondAttribute="top" id="ysi-mD-lgZ"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RD1-oB-F0v">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -149,6 +157,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szG-Tl-Jkp">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -161,6 +170,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="eL9-VN-8gi"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -170,6 +180,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygf-A4-hiw">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -191,6 +202,11 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5tF-Hb-Wsw">
+                                        <frame key="frameInset" minX="333" minY="22" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.85384615379999995" green="0.85384615379999995" blue="0.85384615379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -237,13 +253,15 @@
                         <outlet property="btnC" destination="V21-7i-83P" id="y0E-jk-gxI"/>
                         <outlet property="btnD" destination="Ygf-A4-hiw" id="XJi-gn-X4r"/>
                         <outlet property="cardView" destination="2l8-Yv-3K7" id="9km-l1-tsr"/>
+                        <outlet property="pokemonIDLb" destination="k9l-TM-SqB" id="Uh2-WR-1sg"/>
                         <outlet property="pokemonImage" destination="ni9-Fb-smR" id="7Xe-hB-bYH"/>
+                        <outlet property="progressView" destination="5tF-Hb-Wsw" id="ysa-R5-FBy"/>
                         <outlet property="scoreLb" destination="se4-Dx-79A" id="jAs-Sx-pKh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWC-Vr-dZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008.75" y="116.19718309859155"/>
+            <point key="canvasLocation" x="871" y="118"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w1P-jU-bxY">
