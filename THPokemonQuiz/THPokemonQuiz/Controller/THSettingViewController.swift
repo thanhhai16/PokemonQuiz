@@ -18,13 +18,13 @@ class THSettingViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var switchSound: UISwitch!
     
     @IBOutlet weak var switchMusic: UISwitch!
+    
     var gens : [Bool]?
     
     var last = true
     
     var sound : Bool?
     var music : Bool?
-    var player = AVPlayer()
     var lastCheck : Int?
     var genFalse : [Bool]?
     override func viewDidLoad() {
@@ -40,44 +40,47 @@ class THSettingViewController: UIViewController, UICollectionViewDelegate, UICol
         self.soundMusic()
         
         self.setupUI()
-        
+
         print(self.sound)
         
     }
     @IBAction func invokeSwitchSound(_ sender: AnyObject) {
         if self.switchSound.isOn == true {
-            self.playSound(nameSound: Enable)
+            THPlayer.shared.playSound(nameSound: Enable)
             self.sound = true
             UserDefaults.standard.set(self.sound, forKey: "Sound")
         } else {
             self.sound = false
             UserDefaults.standard.set(self.sound, forKey: "Sound")
         }
-
+        return
     }
+    
     @IBAction func invokeSwitchMusic(_ sender: AnyObject) {
         if self.switchMusic.isOn == true {
             if self.sound == true {
-                playSound(nameSound: Enable)
+                THPlayer.shared.playSound(nameSound: Enable)
             } else{
-                return
             }
             self.music = true
             UserDefaults.standard.set(self.music, forKey: "Music")
         }else {
             if self.sound == true {
-                playSound(nameSound: Disable)
+                THPlayer.shared.playSound(nameSound: Disable)
+            } else {
             }
             self.music = false
             UserDefaults.standard.set(self.music, forKey: "Music")
         }
-
+        THPlayer.shared.playMusic(nameSound: Main, music: self.music!)
+        print("music", music)
     }
     func lastCheckGen() {
         self.genFalse = self.gens?.filter { $0 == false }
         lastCheck = self.genFalse?.count
         print("last " , self.lastCheck)
         }
+    
     func soundMusic () {
         if UserDefaults.standard.value(forKey: "Sound") != nil {
             self.sound = UserDefaults.standard.value(forKey: "Sound") as? Bool
@@ -93,11 +96,10 @@ class THSettingViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         colectionViewGen.reloadData()
+        self.soundMusic()
         self.lastCheckGen()
     }
     
-    @IBAction func switchClicked(_ sender: UISwitch) {
-            }
     func setupUI() {
         self.switchMusic.transform = .init(scaleX: 0.8, y: 0.8)
         self.switchSound.transform = .init(scaleX: 0.8, y: 0.8)
@@ -108,8 +110,10 @@ class THSettingViewController: UIViewController, UICollectionViewDelegate, UICol
         }
         if self.music == true {
             self.switchMusic.isOn = true
+
         } else {
             self.switchMusic.isOn = false
+
         }
     }
     
@@ -151,7 +155,7 @@ class THSettingViewController: UIViewController, UICollectionViewDelegate, UICol
         if (self.gens?[indexPath.row] == true) {
             if self.lastCheck! < 5 {
             if self.sound == true {
-                playSound(nameSound: Disable)
+                THPlayer.shared.playSound(nameSound: Disable)
             }
             self.gens?[indexPath.row] = false
             self.saveGen()
@@ -161,7 +165,7 @@ class THSettingViewController: UIViewController, UICollectionViewDelegate, UICol
             }
         } else {
             if self.sound == true {
-                playSound(nameSound: Enable)
+                THPlayer.shared.playSound(nameSound: Enable)
             }
             self.gens?[indexPath.row] = true
             self.saveGen()
@@ -171,14 +175,6 @@ class THSettingViewController: UIViewController, UICollectionViewDelegate, UICol
     func saveGen () {
         UserDefaults.standard.set(self.gens , forKey: "Gens")
         print(UserDefaults.standard.value(forKey: "Gens"))
-    }
-    
-    func playSound(nameSound: String) {
-        let path = Bundle.main.path(forResource: nameSound, ofType: nil)
-        let url = URL(fileURLWithPath: path!)
-        player = AVPlayer(url: url)
-        player.play()
-        
     }
     
 }

@@ -21,6 +21,7 @@
 		272A20181DE2EE2F00BDCFFF /* ConFig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272A20171DE2EE2F00BDCFFF /* ConFig.swift */; };
 		272ECB321DDEED0D00C979E1 /* THQuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272ECB301DDEED0D00C979E1 /* THQuizController.swift */; };
 		272ECB331DDEED0D00C979E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272ECB311DDEED0D00C979E1 /* ViewController.swift */; };
+		275ED7BD1DE3FE5A00F94025 /* THPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275ED7BC1DE3FE5A00F94025 /* THPlayer.swift */; };
 		276F204D1DDF7791004567D5 /* PoplarStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 276F204A1DDF7791004567D5 /* PoplarStd.otf */; };
 		276F204E1DDF7791004567D5 /* StencilStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 276F204B1DDF7791004567D5 /* StencilStd.otf */; };
 		276F204F1DDF7791004567D5 /* RPCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276F204C1DDF7791004567D5 /* RPCircularProgress.swift */; };
@@ -54,6 +55,7 @@
 		272A20171DE2EE2F00BDCFFF /* ConFig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConFig.swift; sourceTree = "<group>"; };
 		272ECB301DDEED0D00C979E1 /* THQuizController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THQuizController.swift; sourceTree = "<group>"; };
 		272ECB311DDEED0D00C979E1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		275ED7BC1DE3FE5A00F94025 /* THPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THPlayer.swift; sourceTree = "<group>"; };
 		276F204A1DDF7791004567D5 /* PoplarStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoplarStd.otf; sourceTree = "<group>"; };
 		276F204B1DDF7791004567D5 /* StencilStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = StencilStd.otf; sourceTree = "<group>"; };
 		276F204C1DDF7791004567D5 /* RPCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPCircularProgress.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				272ECB311DDEED0D00C979E1 /* ViewController.swift */,
 				272ECB301DDEED0D00C979E1 /* THQuizController.swift */,
 				27C7F6281DE18AB70077C794 /* THSettingViewController.swift */,
+				275ED7BC1DE3FE5A00F94025 /* THPlayer.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				27C7F6291DE18AB70077C794 /* THSettingViewController.swift in Sources */,
 				272A20181DE2EE2F00BDCFFF /* ConFig.swift in Sources */,
 				27C7F63B1DE1A2BF0077C794 /* FMDatabasePool.m in Sources */,
+				275ED7BD1DE3FE5A00F94025 /* THPlayer.swift in Sources */,
 				27C7F63A1DE1A2BF0077C794 /* FMDatabaseAdditions.m in Sources */,
 				27C7F6481DE1A32D0077C794 /* Model Pokemon.swift in Sources */,
 				27C7F6461DE1A3130077C794 /* DataManager.swift in Sources */,

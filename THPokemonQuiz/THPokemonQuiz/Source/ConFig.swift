@@ -8,7 +8,7 @@
 
 let Enable = "enable.wav"
 let Disable = "disable.wav"
-let Main = "main.mp3"
-let Play = "play.mp3"
+let Main = "play.mp3"
+let Play = "main.mp3"
 let True = "true.wav"
 let False = "false.wav"

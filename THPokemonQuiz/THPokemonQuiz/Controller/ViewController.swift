@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var btnPlay: UIButton!
     var score = 0
-    var player = AVPlayer()
     var sound : Bool?
     var music : Bool?
     
@@ -44,7 +43,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(true)
         self.soundMusic()
         print(self.music)
-        self.playMusic(nameSound: Main)
+        THPlayer.shared.playMusic(nameSound: Main, music: self.music!)
         setHighScore()
         self.scoreLB.text = "\(self.score)"
     }
@@ -70,37 +69,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func invokePlayBtn(_ sender: AnyObject) {
-        player.pause()
+        THPlayer.shared.playerMusic?.pause()
         let quizController = self.storyboard?.instantiateViewController(withIdentifier: "THQuizController") as! THQuizController
         self.navigationController?.pushViewController(quizController, animated: true)
     }
     
     @IBAction func invokeSettingBtn(_ sender: AnyObject) {
-        player.pause()
         let settingController = self.storyboard?.instantiateViewController(withIdentifier: "THSettingViewController") as! THSettingViewController
         
         self.navigationController?.pushViewController(settingController, animated: true)
     }
 
-    func playMusic(nameSound: String) {
-        let path = Bundle.main.path(forResource: nameSound, ofType: nil)
-        let url = URL(fileURLWithPath: path!)
-        player = AVPlayer(url: url)
-        if self.music == true {
-            player.play()
-        } else {
-            player.pause()
-        }
-    }
-    func playSound(nameSound: String) {
-        let path = Bundle.main.path(forResource: nameSound, ofType: nil)
-        let url = URL(fileURLWithPath: path!)
-        player = AVPlayer(url: url)
-        player.play()
-    }
-    
-    
-    
-    
 }
 

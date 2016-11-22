@@ -55,7 +55,7 @@ class THQuizController: UIViewController {
             self.music = true
         }
     }
-
+    
     
     
     func setPokemon () {
@@ -108,12 +108,12 @@ class THQuizController: UIViewController {
                 UserDefaults.standard.set(self.score, forKey: "Score")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     self.navigationController?.popViewController(animated: true)
-
+                    
                 })
-
+                
             })
         }
-        }
+    }
     @IBAction func invokeBtnA(_ sender: UIButton) {
         var anotherBtn = self.btns
         let index = self.btns.index(of: sender)!
@@ -127,21 +127,19 @@ class THQuizController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
                 self.nextPokemon()
             })
-
+            
         }
-
-            }
+        
+    }
     func nextPokemon() {
-        setPokemon()
-        self.pokemonIDLb.isHidden = true
-        for btn in btns {
+        self.slideOut()
+        for btn in self.btns {
             btn.isUserInteractionEnabled = true
-            btn.backgroundColor = UIColor.white
         }
     }
     
     func choiceAnswer (answer : String , button : UIButton, anotherButton : [UIButton] ) {
-            if (answer == self.pokemons[self.truePokemonID!].name!) {
+        if (answer == self.pokemons[self.truePokemonID!].name!) {
             button.backgroundColor = UIColor.green
             for btn in anotherButton {
                 btn.isUserInteractionEnabled = false
@@ -159,6 +157,9 @@ class THQuizController: UIViewController {
                 btn.isUserInteractionEnabled = false
             }
             self.playSound(nameSound: False)
+        }
+        for btn in self.btns {
+            btn.isUserInteractionEnabled = false
         }
         
     }
@@ -191,6 +192,34 @@ class THQuizController: UIViewController {
         }
         
     }
+    func slideOut ()  {
+        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut, animations: {
+            self.cardView.center.x = 0 - self.cardView.frame.width/2
+            }) { (compelete) in
+                self.cardView.alpha = 0
+                self.prepareSlideIn()
+        }
+    }
+    func prepareSlideIn() {
+        UIView.animate(withDuration: 0.001, animations: {
+            self.cardView.center.x = self.view.frame.width + self.cardView.frame.width/2
+            }) { (compelete) in
+                self.cardView.alpha = 1
+                self.pokemonIDLb.isHidden = true
+                self.setPokemon()
+                self.slideIn()
+                for btn in self.btns {
+                    btn.backgroundColor = UIColor.white
+                }
 
-
+        }
+    }
+    func slideIn ()  {
+        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations: {
+            self.cardView.center.x = self.view.center.x
+            }) { (compelete) in
+        }
+    }
+    
+    
 }
